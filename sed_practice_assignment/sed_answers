@@ -1,0 +1,34 @@
+1.what is sed?
+answer: sed stands for stream editor that peerforms lots of functions like searching,replace,insertion,deletion.With use of sed command we can edit files even without opening them.
+
+2.How to print only blank lines of a file?
+answer: sed -n '/^$\p' filename
+
+3.write a command to print the first and last lines using sed?
+answer: sed -n '1p;$p' filename
+
+4.write a command to print all lines except the first line using sed.
+answer: sed -n '2,$p' filename
+
+5.write a command to delete all the lines except the first line using sed?
+answer: sed -i '1!d' filename
+
+6.how to add a first record and last record to the current file in linux using sed?
+answer: sed -i '1i First Record' filename
+ sed -i -e '$a last record' filename
+
+7.write a command to remove all empty lines using sed?
+answer: sed -i '/^$/d' filename
+
+8.replace the content of the file
+answer: tac filename
+
+9.replace all occurences of "ABC" with "DEF" from the 8th line till end in lines containing "MNO":
+answer: sed '8,${/MNO/s/ABC/DEF/g}' filename
+
+10.How to find the 80th line of a file using only 'tail' and 'head' command?
+answer: 
+tailv -n 80 filename | head -n 1 
+
+11. print the 10th line without using 'tail' and head command
+answer: sed -n '10p' filename

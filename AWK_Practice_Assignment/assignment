@@ -1,0 +1,34 @@
+1. How To Run Awk Command Specified In A File?
+answer: awk '{selection area}' filename 
+
+2.2. Write A Command To Print The Squares Of Numbers From 1 To 10 Using Awk 
+answer: awk 'BEGIN { for(i=1;i<=10;i++) {print "square of",i,"is",i*i;}}'   
+
+3.Write A Command To Find The Sum Of Bytes (size Of File) Of All Files In A Directory.?
+answer: dir | awk '{ total += $4 }; END { print total }'
+
+4.In The Text File, Some Lines Are Delimited By Colon And Some Are Delimited By
+Space. Write A Command To Print The Third Field Of Each Line.?
+
+answer:awk ‘{ if( $0 ~ /:/ ) { FS=”:”; } else { FS =” “; } print $3 }’ filename
+
+5.Write A Command To Print The Line Number Before Each Line?
+answer: awk ‘{print NR, $0}’ filename
+
+6.Write A Command To Print The Second And Third Line Of A File Without Using Nr.?
+answer: awk ‘BEGIN {RS=””;FS=”\n”} {print $2,$3}’ filename
+
+7.Write A Command To Print Zero Byte Size Files?
+answer: ls -l | awk ‘/^-/ {if ($5 !=0 ) print $9 }’
+
+8.Write A Command To Print The Fields In A Text File In Reverse Order?
+answer: ls -F | awk ‘{print “mv “$1” “$1″.new”}’ | sh
+
+
+9.Write a command to print the fields in a text file in reverse order?
+answer: awk ‘BEGIN {ORS=””} { for(i=NF;i>0;i–) print $i,” “; print “\n”}’ filename
+
+10. Write a command to find the total number of lines in a file without using NR
+answer: awk ‘BEGIN {sum=0} {sum=sum+1} END {print sum}’ filename
+
+
